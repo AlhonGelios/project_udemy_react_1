@@ -29,8 +29,7 @@ class App extends Component {
         })
     }
 
-    addItem = (e, newItem) => {
-        e.preventDefault()
+    addItem = (newItem) => {
         this.setState(({data}) => {
             const newArr = [...data, newItem]
             return {
