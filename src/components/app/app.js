@@ -29,6 +29,16 @@ class App extends Component {
         })
     }
 
+    addItem = (e, newItem) => {
+        e.preventDefault()
+        this.setState(({data}) => {
+            const newArr = [...data, newItem]
+            return {
+                data: newArr
+            }
+        })
+    }
+
     render() {
         return (
             <div className="app">
@@ -43,7 +53,9 @@ class App extends Component {
                     data={this.state.data}
                     onDelete={this.deleteItem}
                 />
-                <EmployeesAddForm/>
+                <EmployeesAddForm
+                    addEmployees={this.addItem}
+                />
             </div>
         )
     }

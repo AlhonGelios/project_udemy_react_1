@@ -1,12 +1,14 @@
 import { Component } from 'react';
 
+import uniqid from 'uniqid'
+
 import './employees-add-form.css';
 class EmployeesAddForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
             name: '',
-            salary: ''
+            salary: '',
         }
     }
 
@@ -17,13 +19,23 @@ class EmployeesAddForm extends Component {
     }
 
     render() {
-    const {name, salary} = this.state
+
+        const {name, salary} = this.state
+        const {addEmployees} = this.props
+
+        const newEmployees = {
+            name,
+            salary,
+            increase: false,
+            id: uniqid('employees-'),
+        }
 
         return (
             <div className="app-add-form">
                 <h3>Добавьте нового сотрудника</h3>
                 <form
-                    className="add-form d-flex">
+                    className="add-form d-flex"
+                    onSubmit={(e) => {addEmployees(e, newEmployees)}}>
                     <input
                         type="text"
                         className="form-control new-post-label"
