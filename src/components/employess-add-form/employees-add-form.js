@@ -28,6 +28,7 @@ class EmployeesAddForm extends Component {
             name,
             salary,
             increase: false,
+            like: false,
             id: uniqid('employees-'),
         }
 
@@ -75,4 +76,4 @@ class EmployeesAddForm extends Component {
     }
 }
 
-export default EmployeesAddForm;
+export default EmployeesAddForm
