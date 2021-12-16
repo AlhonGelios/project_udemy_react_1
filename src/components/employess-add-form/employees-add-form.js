@@ -48,6 +48,7 @@ class EmployeesAddForm extends Component {
                     className="add-form d-flex"
                     onSubmit={this.onSubmit}>
                     <input
+                        required
                         type="text"
                         className="form-control new-post-label"
                         placeholder="Как его зовут?"
@@ -57,6 +58,7 @@ class EmployeesAddForm extends Component {
                     />
 
                     <input
+                        required
                         type="number"
                         className="form-control new-post-label"
                         placeholder="З/П в $?"
